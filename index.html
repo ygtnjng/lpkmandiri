@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/v4-shims.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+
+    <style>
+      :root {
+        --background-color: #ffffff;
+        --default-color: #444444;
+        --themes-color: #667eea;
+        --accent-color: #764ba2;
+        --surface-color: #ffffff;
+        --contrast-color: #ffffff;
+      }
+
+      .flexcenter {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .text-themes {
+        color: var(--themes-color) !important;
+      }
+      .bg-themes {
+        background-color: var(--themes-color) !important;
+      }
+      .icon-o {
+        min-width: var(--size, 1.75em);
+        height: var(--size, 1.75em);
+        border-radius: 50%;
+      }
+
+      .btn-main {
+        color: white !important;
+        background: linear-gradient(45deg, color-mix(in srgb, var(--themes-color), black 10%), color-mix(in srgb, var(--accent-color), black 10%)) !important;
+        border: 0;
+      }
+
+      .section-title:after {
+        content: "";
+        width: 6rem;
+        background: linear-gradient(90deg, transparent, var(--themes-color), transparent);
+        height: 2px;
+      }
+
+      #home .card {
+        backdrop-filter: blur(4px);
+        background: rgba(0, 0, 0, 0.5);
+      }
+      
+      /* Method 2: JavaScript Masonry dengan urutan horizontal */
+        .masonry-js {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .masonry-js .item {
+            position: absolute;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            /*padding: 20px;*/
+            box-sizing: border-box;
+        }
+
+        .masonry-js .item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+    </style>
+  </head>
+  <body class="bg-body-tertiary">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-body">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">LPK Mandiri</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto column-gap-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#hero">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Layanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Galeri</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home">
+      <div class="py-5 text-white mt-5" style="background: linear-gradient(135deg, var(--themes-color) 0%, var(--accent-color) 100%)">
+        <div class="container mb-5">
+          <div class="row g-4 row-cols-lg-2 align-items-center">
+            <!-- Left -->
+            <div class="order-last order-lg-0">
+              <h1 class="fw-bold">LPK Mandiri – Pelatihan & Kursus Berkualitas</h1>
+              <p class="lead">Mengemudi | Komputer | Bahasa Inggris | Kriya Kayu</p>
+              <p>Tingkatkan keterampilan, raih peluang baru. Bersama LPK Mandiri, belajar jadi lebih mudah, praktis, dan menyenangkan.</p>
+
+              <a href="https://wa.me/08125408172" class="btn btn-lg btn-main fs-6">
+                <i class="fab fa-whatsapp"></i>
+                Daftar Sekarang
+              </a>
+              <a href="#services" class="btn btn-lg bg-white fs-6 text-black border-0">Lihat Layanan</a>
+            </div>
+
+            <!-- Right -->
+            <div>
+              <div class="ratio ratio-16x9">
+                <img src="img/1.webp" alt="Modern training facility with students learning computer skills, driving lessons, and woodworking in bright, well-equipped classrooms" class="rounded-3 object-fit-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container" style="margin-top: -4.5rem">
+        <div class="row g-4 row-cols-lg-3 text-white">
+          <div>
+            <div class="card card-body">
+              <div class="fs-3 mb-4">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h3 class="fs-4">Legal & Terpercaya</h3>
+              <p class="opacity-75 mb-0">Terdaftar resmi di Kemendikbud</p>
+            </div>
+          </div>
+          <div>
+            <div class="card card-body">
+              <div class="fs-3 mb-4">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h3 class="fs-4">Legal & Terpercaya</h3>
+              <p class="opacity-75 mb-0">Terdaftar resmi di Kemendikbud</p>
+            </div>
+          </div>
+          <div>
+            <div class="card card-body">
+              <div class="fs-3 mb-4">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h3 class="fs-4">Legal & Terpercaya</h3>
+              <p class="opacity-75 mb-0">Terdaftar resmi di Kemendikbud</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <h2 class="section-title d-flex flex-column align-items-center gap-3 fw-bold mb-5">Tentang Kami</h2>
+
+        <div class="row row-cols-lg-2 g-4">
+          <div>
+            <div class="ratio ratio-4x3">
+              <img src="img/1.webp" alt="Modern training facility with students learning computer skills, driving lessons, and woodworking in bright, well-equipped classrooms" class="rounded-3 object-fit-cover" />
+            </div>
+          </div>
+
+          <div>
+            <p class="fs-5 text-muted">
+              <strong>LPK Mandiri (Lembaga Pendidikan dan Keterampilan Mandiri)</strong> adalah lembaga resmi berdasarkan SK Menteri Kehakiman dan HAM RI No. AHU-0071259.AH.01.07 Tahun 2016, Akta Notaris Debora Dinar Palestina, S.H., M.Kn. No. 04 tanggal 6 Agustus 2016, SK Bupati Kutai Kartanegara cq Badan Pelayanan Perizinan Terpadu No. 420/003/BP2T tanggal 21 September 2016, Surat Rekomendasi Dinas Pendidikan Kabupaten Kutai Kartanegara No. 421/804/DPIV/IX/2016 tanggal 14 September 2016, serta Surat Rekomendasi DPC HIPKI Kabupaten Kutai Kartanegara No. 087/DPCHIPKI/Kukar/IX/2016 tanggal 7 September 2016.<br /><br />
+              Sejak berdiri pada tahun 2016, LPK Mandiri bergerak di bidang pelatihan keterampilan mengemudi, komputer, serta kerajinan/kriya kayu. Kami berkomitmen untuk terus berkembang dengan dukungan tim multidisiplin yang inovatif, profesional, dan berorientasi pada hasil terbaik.
+            </p>
+
+            <div>
+              <h3 class="fs-5 text-uppercase fw-bold">Visi :</h3>
+              <p class="fs-5 text-muted">menjadi pioneer dan pelopor dalam bidang pelatihan dan keterampilan untuk mewujudkan masyarakat yang terampil dan mumpuni/ lpmpeten dalam bidangnya</p>
+            </div>
+
+            <div>
+              <h3 class="fs-5 text-uppercase fw-bold">Misi :</h3>
+              <p class="fs-5 text-muted">menjamin tingkat kepuasan pelanggan baik pelayanan, hasil ilmu terapan dan teori yang telah diberikan selama pelatihan.</p>
+              <ul class="list-unstyled ps-0 mb-0 d-none">
+                <li class="fs-5 text-muted">
+                  <i class="fas fa-check-circle text-themes"></i>
+                  Menyediakan program kursus berkualitas
+                </li>
+                <li class="fs-5 text-muted">
+                  <i class="fas fa-check-circle text-themes"></i>
+                  Mengutamakan pembelajaran praktis
+                </li>
+                <li class="fs-5 text-muted">
+                  <i class="fas fa-check-circle text-themes"></i>
+                  Mendukung peserta hingga siap kerja atau mandiri
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+      <div class="container">
+        <h2 class="section-title d-flex flex-column align-items-center gap-3 fw-bold mb-4">Layanan Kami</h2>
+        <p class="lead text-muted text-center mb-4">Pilih program pelatihan yang sesuai dengan kebutuhan dan tujuan karier Anda</p>
+
+        <div class="row row-cols-lg-4 g-4">
+          <div>
+            <div class="p-3 bg-body rounded-3 shadow">
+              <div class="text-center">
+                <i class="fas fa-car icon-o flexcenter bg-danger-subtle text-danger" style="--size: 3rem"></i>
+                <h3 class="fs-5 my-3">Kursus Mengemudi</h3>
+              </div>
+              <ul class="ps-3 mb-0" style="list-style: &quot;✓&quot;">
+                <li>Mobil manual & matic</li>
+                <li>Instruktur sabar & berpengalaman</li>
+                <li>Jadwal fleksibel</li>
+                <li>Sertifikat kelulusan</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <div class="p-3 bg-body rounded-3 shadow">
+              <div class="text-center">
+                <i class="fas fa-laptop icon-o flexcenter bg-warning-subtle text-warning" style="--size: 3rem"></i>
+                <h3 class="fs-5 my-3">Kursus Komputer</h3>
+              </div>
+              <ul class="ps-3 mb-0" style="list-style: &quot;✓&quot;">
+                <li>Mobil manual & matic</li>
+                <li>Instruktur sabar & berpengalaman</li>
+                <li>Jadwal fleksibel</li>
+                <li>Sertifikat kelulusan</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <div class="p-3 bg-body rounded-3 shadow">
+              <div class="text-center">
+                <i class="fas fa-globe icon-o flexcenter bg-success-subtle text-success" style="--size: 3rem"></i>
+                <h3 class="fs-5 my-3">Kursus Bahasa Inggris</h3>
+              </div>
+              <ul class="ps-3 mb-0" style="list-style: &quot;✓&quot;">
+                <li>Mobil manual & matic</li>
+                <li>Instruktur sabar & berpengalaman</li>
+                <li>Jadwal fleksibel</li>
+                <li>Sertifikat kelulusan</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <div class="p-3 bg-body rounded-3 shadow">
+              <div class="text-center">
+                <i class="fas fa-hammer icon-o flexcenter bg-primary-subtle text-primary" style="--size: 3rem"></i>
+                <h3 class="fs-5 my-3">Kursus Kriya Kayu</h3>
+              </div>
+              <ul class="ps-3 mb-0" style="list-style: &quot;✓&quot;">
+                <li>Mobil manual & matic</li>
+                <li>Instruktur sabar & berpengalaman</li>
+                <li>Jadwal fleksibel</li>
+                <li>Sertifikat kelulusan</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5 bg-body">
+      <div class="container">
+        <h2 class="section-title d-flex flex-column align-items-center gap-3 fw-bold mb-4">Galeri</h2>
+        <p class="lead text-muted text-center mb-4">Lihat suasana belajar dan hasil karya peserta kami</p>
+        
+        <div class="masonry-js" id="masonry-js">
+            <img src="img/4.webp" class="item" />
+            <img src="img/5.webp" class="item" />
+            <img src="img/6.webp" class="item" />
+            <img src="img/7.webp" class="item" />
+            <img src="img/8.webp" class="item" />
+            <img src="img/9.webp" class="item" />
+            <img src="img/10.webp" class="item" />
+            <img src="img/11.webp" class="item" />
+            <img src="img/13.webp" class="item" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="py-5">
+      <div class="container col-lg-8">
+        <h2 class="section-title d-flex flex-column align-items-center gap-3 fw-bold mb-4">Pendaftaran</h2>
+        <p class="lead text-muted text-center mb-4">Daftar kursus dan pelatihan LPK Mandiri secara mudah. Isi formulir online, pilih program yang diinginkan, dan tim kami akan segera menghubungi Anda.</p>
+
+        <form id="registrationForm" action="">
+          <div class="p-4 bg-white shadow rounded-3">
+            <div class="row g-3">
+              <div class="col-lg-6">
+                <label class="d-block">
+                  <div class="form-label">Nama Lengkap</div>
+                  <input type="text" name="name" class="form-control" placeholder="Masukan nama lengkap" required />
+                </label>
+              </div>
+
+              <div class="col-lg-6">
+                <label class="d-block">
+                  <div class="form-label">Nomor HP / WhatsApp</div>
+                  <input type="text" name="phone" class="form-control" placeholder="Masukan nama lengkap" required />
+                </label>
+              </div>
+
+              <div>
+                <label class="d-block">
+                  <div class="form-label">Pilihan Kursus</div>
+                  <select name="course" class="form-select" required>
+                    <option value="">Pilih Kursus</option>
+                    <option value="mengemudi">Kursus Mengemudi</option>
+                    <option value="komputer">Kursus Komputer</option>
+                    <option value="bahasa-inggris">Kursus Bahasa Inggris</option>
+                    <option value="kriya-kayu">Pelatihan Kriya Kayu</option>
+                  </select>
+                </label>
+              </div>
+
+              <div>
+                <label class="d-block">
+                  <div class="form-label">Waktu Pelaksanaan yang Diinginkan</div>
+                  <input type="text" name="schedule" class="form-control" placeholder="Contoh: Senin-Rabu pagi, atau Weekend" required />
+                </label>
+              </div>
+
+              <div>
+                <label class="d-block">
+                  <div class="form-label">Pesan Tambahan (Opsional)</div>
+                  <textarea name="message" class="form-control" rows="4" placeholder="Tulis pertanyaan atau kebutuhan khusus Anda" required></textarea>
+                </label>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-lg btn-main fs-6"><i class="fas fa-paper-plane mr-2"></i> Kirim Pendaftaran</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-body">
+      <div class="container">
+        <h2 class="section-title d-flex flex-column align-items-center gap-3 fw-bold mb-4">Kontak Kami</h2>
+        <p class="lead text-muted text-center mb-4">Hubungi kami untuk informasi lebih lanjut tentang program pelatihan</p>
+
+        <div class="row row-cols-lg-2 g-4">
+          <div>
+            <div class="d-flex flex-column gap-3">
+              <div class="d-flex gap-3">
+                <i class="fas fa-map-marker-alt icon-o flexcenter bg-primary-subtle text-primary" style="--size: 3rem"></i>
+
+                <div>
+                  <h3 class="fs-5">Alamat</h3>
+                  <p class="text-muted mb-0">Jl Pahlawan RT 06 Blok E Ds. Manunggal Jaya Kec. Tenggarong Seberang Kab. Kutai Kartanegara – Kalimantan Timur yang juga dijadikan sebagai kantor.</p>
+                </div>
+              </div>
+
+              <div class="d-flex gap-3">
+                <i class="fa fa-whatsapp icon-o flexcenter bg-success-subtle text-success" style="--size: 3rem"></i>
+
+                <div>
+                  <h3 class="fs-5">Whatsapp</h3>
+                  <p class="text-success mb-0">082131014436</p>
+                </div>
+              </div>
+
+              <div class="d-flex gap-3">
+                <i class="fa fa-envelope icon-o flexcenter bg-danger-subtle text-danger" style="--size: 3rem"></i>
+
+                <div>
+                  <h3 class="fs-5">Email</h3>
+                  <p class="text-danger mb-0">hpurwito@yahoo.com</p>
+                </div>
+              </div>
+
+              <div class="d-flex gap-3">
+                <i class="fas fa-clock icon-o flexcenter bg-warning-subtle text-warning" style="--size: 3rem"></i>
+
+                <div>
+                  <h3 class="fs-5">Jam Operasional</h3>
+                  <p class="text-muted mb-0">
+                    Senin – Minggu<br />
+                    08.00 – 20.00 WITA
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="ratio ratio-4x3">
+              <iframe
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://www.google.com/maps?q=-6.200000,106.816666&hl=es;z=14&output=embed">
+</iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-5">
+      <div class="container">
+        <h2 class="section-title d-flex flex-column align-items-center gap-3 fw-bold mb-4">Artikel & Tips</h2>
+        <p class="lead text-muted text-center mb-4">Baca artikel dan tips berguna untuk meningkatkan keterampilan Anda</p>
+
+        <div class="row row-cols-lg-3 g-4">
+          <div>
+            <div class="p-3 rounded-3 shadow">
+              <h3 class="fs-5">Lorem ipsum dolor sit amet consectetur.</h3>
+              <p class="text-muted mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, error!</p>
+            </div>
+          </div>
+
+          <div>
+            <div class="p-3 rounded-3 shadow">
+              <h3 class="fs-5">Lorem ipsum dolor sit amet consectetur.</h3>
+              <p class="text-muted mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, error!</p>
+            </div>
+          </div>
+
+          <div>
+            <div class="p-3 rounded-3 shadow">
+              <h3 class="fs-5">Lorem ipsum dolor sit amet consectetur.</h3>
+              <p class="text-muted mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, error!</p>
+            </div>
+          </div>
+
+          <div>
+            <div class="p-3 rounded-3 shadow">
+              <h3 class="fs-5">Lorem ipsum dolor sit amet consectetur.</h3>
+              <p class="text-muted mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, error!</p>
+            </div>
+          </div>
+
+          <div>
+            <div class="p-3 rounded-3 shadow">
+              <h3 class="fs-5">Lorem ipsum dolor sit amet consectetur.</h3>
+              <p class="text-muted mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, error!</p>
+            </div>
+          </div>
+
+          <div>
+            <div class="p-3 rounded-3 shadow">
+              <h3 class="fs-5">Lorem ipsum dolor sit amet consectetur.</h3>
+              <p class="text-muted mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, error!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white py-5">
+      <div class="container">
+        <div class="row gy-4">
+          <!-- Kolom 1 -->
+          <div class="col-md-6 col-lg-3">
+            <h3 class="h4 fw-bold mb-3">LPK Mandiri</h3>
+            <p class="text-light">Lembaga Kursus dan Pelatihan terpercaya di Tenggarong Seberang sejak 2019.</p>
+            <div class="d-flex gap-3 mt-3">
+              <a href="https://wa.me/08125408172" class="text-success fs-4">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="mailto:hpurwito@yahoo.com" class="text-danger fs-4">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Kolom 2 -->
+          <div class="col-md-6 col-lg-3">
+            <h4 class="h6 fw-semibold mb-3">Layanan</h4>
+            <ul class="list-unstyled">
+              <li><a href="#services" class="text-light text-decoration-none d-block mb-2">Kursus Mengemudi</a></li>
+              <li><a href="#services" class="text-light text-decoration-none d-block mb-2">Kursus Komputer</a></li>
+              <li><a href="#services" class="text-light text-decoration-none d-block mb-2">Kursus Bahasa Inggris</a></li>
+              <li><a href="#services" class="text-light text-decoration-none d-block">Pelatihan Kriya Kayu</a></li>
+            </ul>
+          </div>
+
+          <!-- Kolom 3 -->
+          <div class="col-md-6 col-lg-3">
+            <h4 class="h6 fw-semibold mb-3">Navigasi</h4>
+            <ul class="list-unstyled">
+              <li><a href="#home" class="text-light text-decoration-none d-block mb-2">Beranda</a></li>
+              <li><a href="#about" class="text-light text-decoration-none d-block mb-2">Tentang Kami</a></li>
+              <li><a href="#gallery" class="text-light text-decoration-none d-block mb-2">Galeri</a></li>
+              <li><a href="#contact" class="text-light text-decoration-none d-block">Kontak</a></li>
+            </ul>
+          </div>
+
+          <!-- Kolom 4 -->
+          <div class="col-md-6 col-lg-3">
+            <h4 class="h6 fw-semibold mb-3">Kontak</h4>
+            <ul class="list-unstyled text-light">
+              <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Tenggarong Seberang</li>
+              <li class="mb-2"><i class="fas fa-phone me-2"></i>0812-5408-172</li>
+              <li><i class="fas fa-clock me-2"></i>08.00 - 20.00 WITA</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="border-secondary my-4" />
+
+        <div class="text-center text-light small">
+          <p class="mb-0">&copy; 2024 LPK Mandiri. Semua hak dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    
+    <script>
+      (() => {
+        let resizeTimeout;
+        let isResizing = false;
+        
+        function getResponsiveConfig(containerWidth) {
+            let cols, itemWidth;
+            
+            if (containerWidth >= 1200) {
+                cols = 4;
+                itemWidth = (containerWidth - (3 * 15)) / 4;
+            } else if (containerWidth >= 768) {
+                cols = 3;
+                itemWidth = (containerWidth - (2 * 15)) / 3;
+            } else if (containerWidth >= 480) {
+                cols = 2;
+                itemWidth = (containerWidth - (1 * 15)) / 2;
+            } else {
+                cols = 1;
+                itemWidth = containerWidth;
+            }
+            
+            return { cols, itemWidth };
+        }
+        
+        function initMasonry() {
+            const container = document.getElementById('masonry-js');
+            const items = container.getElementsByClassName('item');
+            
+            if (items.length === 0) return;
+            
+            if (isResizing) return;
+            
+            const containerWidth = container.offsetWidth;
+            const gap = 15;
+            const config = getResponsiveConfig(containerWidth);
+            
+            // Set width langsung tanpa transisi
+            for (let i = 0; i < items.length; i++) {
+                items[i].style.width = config.itemWidth + 'px';
+            }
+            
+            // Langsung kalkulasi posisi tanpa delay
+            const colHeights = new Array(config.cols).fill(0);
+            
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                
+                // Cari kolom dengan tinggi terpendek
+                let shortestCol = 0;
+                for (let j = 1; j < config.cols; j++) {
+                    if (colHeights[j] < colHeights[shortestCol]) {
+                        shortestCol = j;
+                    }
+                }
+                
+                // Hitung dan set posisi langsung
+                const x = shortestCol * (config.itemWidth + gap);
+                const y = colHeights[shortestCol];
+                
+                item.style.left = x + 'px';
+                item.style.top = y + 'px';
+                
+                // Update tinggi kolom
+                colHeights[shortestCol] += item.offsetHeight + gap;
+            }
+            
+            // Set tinggi container langsung
+            const maxHeight = Math.max(...colHeights);
+            container.style.height = maxHeight + 'px';
+        }
+        
+        function handleResize() {
+            isResizing = true;
+            
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                isResizing = false;
+                initMasonry();
+            }, 100); // Lebih cepat tanpa transisi
+        }
+        
+        window.addEventListener('load', () => {
+            setTimeout(initMasonry, 50);
+        });
+        
+        // Handle resize events
+        window.addEventListener('resize', handleResize);
+        
+        const registrationForm = document.getElementById('registrationForm');
+        registrationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const phone = formData.get('phone');
+            const course = formData.get('course');
+            const schedule = formData.get('schedule');
+            const message = formData.get('message') || '';
+            
+            const courseNames = {
+                'mengemudi': 'Kursus Mengemudi',
+                'komputer': 'Kursus Komputer',
+                'bahasa-inggris': 'Kursus Bahasa Inggris',
+                'kriya-kayu': 'Pelatihan Kriya Kayu'
+            };
+            
+            const whatsappMessage = `Halo LPK Mandiri,\n\nSaya ingin mendaftar:\n\nNama: ${name}\nHP: ${phone}\nKursus: ${courseNames[course]}\nJadwal: ${schedule}\nPesan: ${message}\n\nTerima kasih!`;
+            
+            const whatsappUrl = `https://wa.me/08125408172?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+      })()
+    </script>
+  </body>
+</html>
